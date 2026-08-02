@@ -1,12 +1,16 @@
 using System;
-using System.Collections;
-using System.Collections.Generic;
-using TMPro;
 using UnityEngine;
 
-public class SC_CoinsManager : MonoBehaviour
+public class SC_CoinsManager : MonoBehaviour, ICounter
 {
     private int coins = 0;
+
+    public int Value
+    {
+        get { return coins; }
+    }
+
+    public event Action<int> OnValueChanged;
 
     private void OnEnable()
     {
@@ -21,7 +25,8 @@ public class SC_CoinsManager : MonoBehaviour
     private void OnCoinCollision()
     {
         coins++;
-        GameObject.Find("Txt_Coins").GetComponent<TextMeshProUGUI>().text = "Coins: " + coins.ToString();
-    }
 
+        if (OnValueChanged != null)
+            OnValueChanged(coins);
+    }
 }

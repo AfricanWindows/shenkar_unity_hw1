@@ -1,8 +1,11 @@
+using System;
 using UnityEngine;
 
 public class PlayerDeath : MonoBehaviour
 {
-     private Vector3 startPositon;
+    public static event Action OnPlayerDied;
+
+    private Vector3 startPositon;
 
     private void OnEnable()
     {
@@ -13,13 +16,22 @@ public class PlayerDeath : MonoBehaviour
     {
         SC_Death.OnSpikeCollision -= OnSpikeCollision;
     }
+
     void Awake()
     {
         startPositon = transform.position;
     }
 
-    private void OnSpikeCollision()
+    public void Respawn()
     {
         transform.position = startPositon;
+    }
+
+    private void OnSpikeCollision()
+    {
+        Respawn();
+
+        if (OnPlayerDied != null)
+            OnPlayerDied();
     }
 }
