@@ -1,16 +1,9 @@
 using UnityEngine;
 
-public class FireFlowerController : MonoBehaviour
+public class FireFlowerController : BasePickable
 {
-
-    void OnTriggerEnter2D(Collider2D col)
+    protected override IPowerUp CreatePowerUp()
     {
-        Debug.Log("OnCollisionEnter2D " + col.gameObject.name);
-        if (col.gameObject.tag == "Player")
-        {
-            Debug.Log("Mario Collision!");
-            this.gameObject.SetActive(false);
-            col.gameObject.GetComponent<PlayerPowerUp>().CollectPowerUp(new FireFlowerPowerUp());
-        }
+        return new FireFlowerPowerUp();
     }
 }
