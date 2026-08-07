@@ -14,11 +14,11 @@ public class SC_Death : MonoBehaviour
 
     void OnCollisionEnter2D(Collision2D col)
     {
-        Debug.Log("OnCollisionEnter2D " + col.gameObject.name);
+        // Debug.Log("OnCollisionEnter2D " + col.gameObject.name);
         if(col.gameObject.tag == "Player")
         {
             Debug.Log("Mario Collision!");
-            //if(col.gameObject.GetComponent<SC_Player>() != null)
+            // if(col.gameObject.GetComponent<SC_Player>() != null)
             //    col.gameObject.GetComponent<SC_Player>().ResetMarioPosition();
 
             if (OnSpikeCollision != null)

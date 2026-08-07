@@ -27,11 +27,17 @@ public class PlayerDeath : MonoBehaviour
         transform.position = startPositon;
     }
 
-    private void OnSpikeCollision()
+    /// <summary>Kills Mario: respawn + tell everyone (PlayerLives listens).</summary>
+    public void Kill()
     {
         Respawn();
 
         if (OnPlayerDied != null)
             OnPlayerDied();
+    }
+
+    private void OnSpikeCollision()
+    {
+        Kill();
     }
 }

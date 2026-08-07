@@ -9,7 +9,7 @@ public class SC_Floor : MonoBehaviour
 
     void OnCollisionEnter2D(Collision2D col)
     {
-        Debug.Log("OnCollisionEnter2D " + col.gameObject.name);
+        // Debug.Log("OnCollisionEnter2D " + col.gameObject.name);
         if (col.gameObject.tag == "Player")
         {
             Debug.Log("Mario Collision!");
@@ -17,7 +17,7 @@ public class SC_Floor : MonoBehaviour
             float _playerY = col.gameObject.transform.position.y;   
             float _tileY = transform.position.y;
 
-            Debug.Log(_playerY + " " + _tileY);
+            // Debug.Log(_playerY + " " + _tileY);
             if (_playerY > _tileY + 0.45f)
             {
                 if (OnFloorCollision != null)

@@ -10,11 +10,11 @@ GameObject:
   m_Component:
   - component: {fileID: 8030223241990005791}
   - component: {fileID: 8293384299921479540}
-  - component: {fileID: -2751458972493023182}
   - component: {fileID: 2487451591007417260}
-  - component: {fileID: 5866973502554898182}
+  - component: {fileID: -3407852462079099371}
+  - component: {fileID: 4906771737730382529}
   m_Layer: 0
-  m_Name: Axe
+  m_Name: EnemyFireball
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -84,8 +84,8 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_MaskInteraction: 0
-  m_Sprite: {fileID: 21300000, guid: cee43561d65af00428bf9c5a279fd49d, type: 3}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Sprite: {fileID: 21300000, guid: 8b61b5886f3b1ba429352e2460556baa, type: 3}
+  m_Color: {r: 1, g: 0.5730728, b: 0, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -95,22 +95,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_SpriteSortPoint: 0
   m_BlendShapeWeights: []
---- !u!114 &-2751458972493023182
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6685130501241294565}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5ad6cf4589dd248418efce6be6a520f1, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::ProjectileAxe
-  speedX: 500
-  speedY: 30
-  lifetime: 3
-  damage: 1
 --- !u!50 &2487451591007417260
 Rigidbody2D:
   serializedVersion: 5
@@ -126,7 +110,7 @@ Rigidbody2D:
   m_Mass: 1
   m_LinearDamping: 0
   m_AngularDamping: 0.05
-  m_GravityScale: 1
+  m_GravityScale: 0
   m_Material: {fileID: 0}
   m_IncludeLayers:
     serializedVersion: 2
@@ -138,7 +122,7 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 6
---- !u!58 &5866973502554898182
+--- !u!58 &-3407852462079099371
 CircleCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -173,4 +157,20 @@ CircleCollider2D:
   m_CompositeOperation: 0
   m_CompositeOrder: 0
   m_Offset: {x: 0, y: 0}
-  m_Radius: 0.575
+  m_Radius: 0.31
+--- !u!114 &4906771737730382529
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6685130501241294565}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 055e9d9ee4b51ff48a85627461d82597, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::EnemyProjectile
+  speedX: 300
+  speedY: 0
+  lifetime: 3
+  playerTag: Player
