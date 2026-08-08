@@ -10,25 +10,17 @@ public class UI_CounterView : MonoBehaviour
     [Tooltip("GameObject that holds a component implementing ICounter")]
     [SerializeField] private GameObject counterSource;
 
-    [Tooltip("Optional. Use when counterSource holds MORE THAN ONE counter " +
-             "(Mario has both PlayerLives and PlayerKeys) - drag the exact component here.")]
-    [SerializeField] private MonoBehaviour counterOverride;
-
-    [SerializeField] private TextMeshProUGUI label;
-
     [Tooltip("{0} is replaced by the counter value")]
     [SerializeField] private string format = "Coins: {0}";
 
+    private TextMeshProUGUI label;
     private ICounter counter;
 
     private void OnEnable()
     {
-        if (label == null)
-            label = GetComponent<TextMeshProUGUI>();
+        label = GetComponent<TextMeshProUGUI>();
 
-        counter = counterOverride as ICounter;
-
-        if (counter == null && counterSource != null)
+        if (counterSource != null)
             counter = counterSource.GetComponent<ICounter>();
 
         if (counter == null)

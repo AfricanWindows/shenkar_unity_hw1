@@ -1,25 +1,16 @@
-using System;
 using UnityEngine;
 
 /// <summary>
-/// Remembers whether Mario picked up the level key.
-/// Implements ICounter so the key can be shown in the GUI for free.
+/// Remembers whether Mario picked up the level key. Nothing else.
 /// </summary>
-public class PlayerKeys : MonoBehaviour, ICounter
+public class PlayerKeys : MonoBehaviour
 {
     private int keys = 0;
-
-    public int Value
-    {
-        get { return keys; }
-    }
 
     public bool HasKey
     {
         get { return keys > 0; }
     }
-
-    public event Action<int> OnValueChanged;
 
     public void AddKey(int amount)
     {
@@ -27,8 +18,5 @@ public class PlayerKeys : MonoBehaviour, ICounter
             return;
 
         keys += amount;
-
-        if (OnValueChanged != null)
-            OnValueChanged(keys);
     }
 }

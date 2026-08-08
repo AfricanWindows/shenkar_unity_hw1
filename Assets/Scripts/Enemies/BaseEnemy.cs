@@ -1,4 +1,3 @@
-using System;
 using UnityEngine;
 
 /// <summary>
@@ -9,9 +8,6 @@ public abstract class BaseEnemy : MonoBehaviour, IDamageable
 {
     [SerializeField] private int health = 1;
     [SerializeField] private string playerTag = "Player";
-
-    /// <summary>Raised with the death position - used by the spawner (bonus).</summary>
-    public static event Action<Vector3> OnEnemyDied;
 
     public void TakeDamage(int amount)
     {
@@ -26,9 +22,6 @@ public abstract class BaseEnemy : MonoBehaviour, IDamageable
 
     protected virtual void Die()
     {
-        if (OnEnemyDied != null)
-            OnEnemyDied(transform.position);
-
         Destroy(gameObject);
     }
 
