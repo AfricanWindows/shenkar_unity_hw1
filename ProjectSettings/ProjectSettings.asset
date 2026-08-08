@@ -829,7 +829,8 @@ PlayerSettings:
   webGLCloseOnQuit: 0
   webWasm2023: 1
   webEnableSubmoduleStrippingCompatibility: 0
-  scriptingDefineSymbols: {}
+  scriptingDefineSymbols:
+    Standalone: SENTIS_ANALYTICS_ENABLED
   additionalCompilerArguments: {}
   platformArchitecture: {}
   scriptingBackend:
@@ -929,11 +930,11 @@ PlayerSettings:
   activeInputHandler: 1
   windowsGamepadBackendHint: 0
   enableDirectStorage: 0
-  cloudProjectId: ab8d30da-d49f-41dc-a350-c01fa5cf505c
+  cloudProjectId: 98d7e483-56ea-403f-8ecb-9dd820c73f88
   framebufferDepthMemorylessMode: 0
   qualitySettingsNames: []
   projectName: shenkar2026client
-  organizationId: mindblast6
+  organizationId: zirkiev555
   cloudEnabled: 0
   legacyClampBlendShapeWeights: 0
   hmiLoadingImage: {fileID: 0}

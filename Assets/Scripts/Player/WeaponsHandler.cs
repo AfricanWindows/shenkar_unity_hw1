@@ -12,7 +12,7 @@ public class WeaponsHandler : MonoBehaviour
     [SerializeField] private Transform weaponsRoot;
 
     private List<IWeapon> weapons = new List<IWeapon>();
-    public int index = 0;
+    private int index = 0;
 
     public void Awake()
     {
