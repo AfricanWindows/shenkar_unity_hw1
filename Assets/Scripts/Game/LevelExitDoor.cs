@@ -11,7 +11,6 @@ public class LevelExitDoor : MonoBehaviour
     [SerializeField] private string playerTag = "Player";
 
     public event Action OnLevelCompleted;
-    public event Action OnLockedDoorTouched;
 
     private bool completed = false;
 
@@ -24,11 +23,7 @@ public class LevelExitDoor : MonoBehaviour
 
         if (playerKeys == null || !playerKeys.HasKey)
         {
-            Debug.Log("Door is locked - find the key first");
-
-            if (OnLockedDoorTouched != null)
-                OnLockedDoorTouched();
-
+            Debug.Log("<color=yellow>Door is locked - find the key first</color>");
             return;
         }
 
